@@ -1,0 +1,237 @@
+/* Navigation Bar Styles */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* ensure absolute mobile menu is positioned relative to its container */
+.nav-container {
+  position: relative;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-family: 'Georgia', serif;
+  transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: var(--secondary-color);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: var(--secondary-color);
+}
+
+.hamburger svg {
+  stroke-width: 2;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.fork {
+  position: absolute;
+  transform: rotate(-25deg);
+  font-size: 1.8rem;
+}
+
+.spoon {
+  position: absolute;
+  transform: rotate(25deg);
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-link-cta {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.nav-link-cta:hover {
+  background-color: var(--secondary-color);
+  border-bottom: none;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    height: 60px;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+  }
+
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .nav-menu.active {
+    max-height: 500px;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom-width: 2px;
+    border-bottom-color: transparent;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    background-color: #f9f9f9;
+  }
+
+  .nav-link.active {
+    background-color: #f0f0f0;
+    border-bottom-color: var(--primary-color);
+  }
+
+  .nav-link-cta {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 0;
+    border: none;
+    margin: 10px 20px;
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+
+  .nav-link-cta:hover {
+    background-color: var(--secondary-color);
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-menu.active {
+    max-height: 600px;
+  }
+
+  .nav-link {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+
+  .nav-link-cta {
+    margin: 8px 15px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+}
